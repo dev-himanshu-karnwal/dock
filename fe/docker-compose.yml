@@ -1,0 +1,6 @@
+services:
+  webapp:
+    build: ./
+    ports:
+      - 8080:5173
+    container_name: webapp
