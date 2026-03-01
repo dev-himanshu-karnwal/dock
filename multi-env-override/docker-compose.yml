@@ -20,6 +20,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    condition: service_healthy
 
   redis:
     image: redis:latest
@@ -32,6 +33,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    condition: service_healthy
 
 volumes:
   mongodb_data:
