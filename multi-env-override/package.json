@@ -1,0 +1,27 @@
+{
+  "name": "multi-env-override",
+  "version": "1.0.0",
+  "description": "Minimal Node Express Mongo Mongoose Redis app",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec tsx index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "ioredis": "^5.9.3",
+    "mongoose": "^8.0.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^22.0.0",
+    "nodemon": "^3.1.13",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.0"
+  }
+}
