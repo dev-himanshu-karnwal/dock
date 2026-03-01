@@ -10,10 +10,13 @@ dotenv.config();
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/multi-env";
 const REDIS_HOST = process.env.REDIS_HOST || "localhost";
 const REDIS_PORT = Number(process.env.REDIS_PORT) || 6379;
+const REDIS_DB = Number(process.env.REDIS_DB) || 0;
+const PORT = Number(process.env.PORT) || 3000;
 
 const redis = new Redis({
   host: REDIS_HOST,
   port: REDIS_PORT,
+  db: REDIS_DB,
   maxRetriesPerRequest: 1,
   retryStrategy(times) {
     if (times > 3) return null;
@@ -68,8 +71,6 @@ app.post("/", async (req: express.Request, res: express.Response) => {
     return res.status(500).json({ error: "Internal server error" });
   }
 });
-
-const PORT = Number(process.env.PORT) || 3000;
 
 async function main() {
   await mongoose.connect(MONGODB_URI);
