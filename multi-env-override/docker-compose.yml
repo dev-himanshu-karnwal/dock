@@ -20,10 +20,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-    condition: service_healthy
 
   redis:
-    image: redis:latest
+    image: redis:7-alpine
     ports:
       - 6379:6379
     volumes:
@@ -33,7 +32,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-    condition: service_healthy
 
 volumes:
   mongodb_data:
